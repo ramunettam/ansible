@@ -1,0 +1,12 @@
+-name: variables
+ hosts: localhost
+ vars: # varible declaration in yaml global
+  course: "devops"
+  duration: 3
+  trainer: "ram"
+ tasks: 
+ -name: print the details
+  ansible.builtin.debug:
+   msg: "hi, we are learning {{course}} from trainer {{trainer}} duration {{duration}}."
+
+  
