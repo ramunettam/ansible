@@ -1,0 +1,16 @@
+- name: install and run nginix
+  hosts: web
+  become: yes ##yes means root user
+  tasks:
+   - name: install nginix
+     ansible.builtin.dnf:
+     name: nginix
+     state: latest
+   - name: start nginix
+     ansbile.builtin.serverice:
+     name: nginix
+     state: started
+     enable: yes   
+     
+
+   
