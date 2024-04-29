@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
   - name: task variable
-    pars:
+    vars:
      trainer: "ram"
      course: "terromform"
      duration: "15hrs"
