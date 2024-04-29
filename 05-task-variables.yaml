@@ -1,5 +1,5 @@
 - name: task level varibales
-  host: localhost
+  hosts: localhost
   tasks:
   - name: task variable
     pars:
