@@ -7,6 +7,6 @@
      course: "terromform"
      duration: "15hrs"
     ansible.builtin.debug:
-     msg: "hi, i am learning {{course}} from {{trainer}} duration {{duration}}."
+     msg: "hi, i am learning {{course}} from trainer {{trainer}} duration {{duration}}."
   
        
