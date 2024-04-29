@@ -10,6 +10,7 @@
     Aws= 3
     ansbils= 5
     terraform= 8
+   RealProject: true 
   tasks:
   - name:
     ansible.builtin.debug: 
