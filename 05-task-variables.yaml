@@ -3,9 +3,10 @@
   tasks:
   - name: task variable
     pars:
-    course: "terromform"
-    duration: "15hrs"
-    ansible.builtin.debug:
-     msg: "hi, i am learning {{course}} from {{tranier}} duration {{duration}}."
+     trainer: "ram"
+     course: "terromform"
+     duration: "15hrs"
+     ansible.builtin.debug:
+      msg: "hi, i am learning {{course}} from {{tranier}} duration {{duration}}."
   
        
