@@ -1,0 +1,11 @@
+- name:
+  hosts: localhost
+  tasks: 
+  - name:
+    ansible.builtin.debug:
+     msg: "{{ item }}"
+    tools:
+    - ansible
+    - terrform
+    - docker
+    - shell 
