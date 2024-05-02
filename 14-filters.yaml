@@ -1,0 +1,71 @@
+- name: filters
+  hosts: localhost
+  tasks:
+  -name: default value for variable
+   ansible.builtin.debug:
+    msg: " hello {{ course | default('ansible') "
+  
+- name: lower to upper
+  hosts: localhost
+  vars:
+   greetings: hello world
+  tasks: 
+  - name: lower to upper
+    ansible.builtin.debug:
+     msg: " {{ greetings }} | upper "
+
+- name: lower to upper
+  hosts: localhost
+  vars:
+   greetings: HELLO I AM RAM
+  tasks: 
+  - name: lower to upper
+    ansible.builtin.debug:
+     msg: " {{ greetings }} | lower "     
+
+- name:
+  hosts:
+  vars:
+   num: [1,3,5,5,3,5,6]     
+  tasks:
+  - name: remove duplicates
+    ansible.builtin.debug:
+     mag: " {{ num | unique}}" 
+- name: print min and max
+  hosts: localhost
+  vars:
+    ages: [25, 35, 67, 89]
+  tasks:
+  - name: print min and max
+    ansible.builtin.debug:
+      msg: " min age: {{ ages | min }}, max age: {{ ages | max }}"
+
+- name: convert dictionary into items/list
+  hosts: localhost
+  vars:
+    my_dict: # this is called as dictionary or map or key/value pairs.
+      Course: Ansbile
+      Trainer: Sivakumar
+      Duration: 120hr
+  tasks:
+  - name: before convert
+    ansible.builtin.debug:
+      msg: "Before convert: {{ my_dict }}"
+  - name: after convert
+    ansible.builtin.debug:
+      msg: "After convert: {{ my_dict | dict2items }}"
+
+- name: convert items to dictionary
+  hosts: localhost
+  vars:
+    my_list:
+    - {'key': 'Course', 'value': 'Ansbile'}
+    - {'key': 'Trainer', 'value': 'Sivakumar'}
+    - {'key': 'Duration', 'value': '120hr'}
+  tasks:
+  - name: before convert
+    ansible.builtin.debug:
+      msg: "Before convert: {{ my_list }}"
+  - name: after convert
+    ansible.builtin.debug:
+      msg: "After convert: {{ my_list | items2dict }}"
